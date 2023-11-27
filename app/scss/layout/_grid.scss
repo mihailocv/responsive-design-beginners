@@ -31,7 +31,6 @@
   }
 
   &__sidebar {
-    background-color: hsl(300, 100%, 27%);
     
     @include u.breakpoint-down(medium){
       text-align: center;
@@ -40,5 +39,9 @@
     @include u.breakpoint-down(small){
       text-align: right;
     }
+  }
+
+  &__widget{
+    background-color: hsl(300, 100%, 27%);
   }
 }
