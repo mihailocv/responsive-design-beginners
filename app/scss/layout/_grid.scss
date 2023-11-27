@@ -1,5 +1,9 @@
 @use '../util' as u;
 
+%widget {
+  padding: u.rem(16);
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -21,28 +25,34 @@
   &__main {
     background-color: hsl(240, 100%, 27%);
 
-    @include u.breakpoint(medium){
-      background-color:hsl(120, 100%, 16%);
+    @include u.breakpoint(medium) {
+      background-color: hsl(120, 100%, 16%);
     }
 
-    @include u.breakpoint(large){
+    @include u.breakpoint(large) {
       background-color: hsl(39, 100%, 35%);
     }
   }
 
   &__sidebar {
-    
-    @include u.breakpoint-down(medium){
+    @include u.breakpoint-down(medium) {
       text-align: center;
     }
 
-    @include u.breakpoint-down(small){
+    @include u.breakpoint-down(small) {
       text-align: right;
     }
   }
 
-  &__widget{
-    background-color: hsl(300, 100%, 27%);
-    padding: u.rem(16);
+  &__widget {
+    &--green {
+      @extend %widget;
+      background-color: hsl(120, 100%, 27%);
+    }
+
+    &--magenta {
+      @extend %widget;
+      background-color: hsl(300, 100%, 27%);
+    }
   }
 }
