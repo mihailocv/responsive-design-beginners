@@ -20,6 +20,14 @@
 
   &__main {
     background-color: hsl(240, 100%, 27%);
+
+    @include u.breakpoint(medium){
+      background-color:hsl(120, 100%, 16%);
+    }
+
+    @include u.breakpoint(large){
+      background-color: hsl(39, 100%, 35%);
+    }
   }
 
   &__sidebar {
@@ -27,6 +35,10 @@
     
     @include u.breakpoint-down(medium){
       text-align: center;
+    }
+
+    @include u.breakpoint-down(small){
+      text-align: right;
     }
   }
 }
