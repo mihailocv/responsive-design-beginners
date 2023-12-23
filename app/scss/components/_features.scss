@@ -3,23 +3,17 @@
 .features {
   &__wrapper {
     display: flex;
-    // flex-direction: column;
     flex-wrap: wrap;
-    gap: 40px;
     justify-content: center;
-
-    @include u.breakpoint(large) {
-      flex-wrap: nowrap;
-      gap: 5.5%;
-    }
+    gap: 40px 5.5%;
   }
 
   &__item {
+    flex: 0 1 u.rem(346);
     text-align: center;
 
     @include u.breakpoint(large) {
-      text-align: left;
-      flex: 1;
+      text-align: start;
     }
   }
 
