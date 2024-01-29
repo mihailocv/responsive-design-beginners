@@ -1,4 +1,4 @@
-@use '../util' as u;
+@use "../util" as u;
 
 html {
   box-sizing: border-box;
@@ -23,6 +23,11 @@ img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+figure,
+blockquote {
+  margin: 0;
 }
 
 .visually-hidden {
