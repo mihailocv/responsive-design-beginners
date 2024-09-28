@@ -1,34 +1,42 @@
 @use '../util' as u;
 
 .hero {
+  --wave-height:clamp(1.3125rem, -0.36363636363636376rem + 7.151515151515151vw, 5rem);
+
   background-color: var(--hero-bg);
   color: var(--text-light);
+  padding-block-start: 40px;
 
-  &__wrapper {
+  &__wave{
+    height: var(--wave-height);
+  }
+
+  &__content {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 40px;
-    justify-items: center;
-    align-items: center;
+    margin-block-end: calc(60px + var(--wave-height));
 
-    padding-block: 30px 60px;
-
-    @include u.breakpoint(large) {
-      gap: 10%;
+    @include u.breakpoint(large){
       grid-template-columns: 6fr 5fr;
-
-      padding-block: 40px 80px;
+      margin-block-end: 0;
     }
   }
 
   &__image {
     width: 61%;
     max-width: u.rem(483);
+    justify-self: center;
 
     @include u.breakpoint(large) {
-      order: 2;
       width: 100%;
+      padding-block-start: 40px;
+      order: 2;
+      justify-self: end;
     }
+  }
+
+  &__text {
+
   }
 
   &__button {
