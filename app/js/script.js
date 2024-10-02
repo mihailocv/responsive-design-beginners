@@ -9,6 +9,7 @@ const setupTopNav = () => {
   if (breakpint.matches) {
     menuTopNav.setAttribute("inert", "");
   } else {
+    closeMobileMenu();
     menuTopNav.removeAttribute("inert");
   }
 };

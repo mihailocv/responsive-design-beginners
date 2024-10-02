@@ -1,6 +1,19 @@
 @use "../util" as u;
 
 .testimonial {
+  --testimonial-bg: var(--main-bg);
+  --testimonial-text: var(--text-dark);
+  --testimonial-icon: hsl(180, 100%, 42%);
+
+  background-color: var(--testimonial-bg);
+  color: var(--testimonial-text);
+
+  &.dark {
+    --testimonial-bg: hsl(232, 58%, 55%);
+    --testimonial-text: var(--text-light);
+    --testimonial-icon: hsla(0, 0%, 100%, 50%);
+  }
+
   &__wrapper {
     max-width: 800px;
   }
@@ -21,17 +34,21 @@
         translate: calc(-100% - 40px) -30px;
       }
 
-      &:nth-child(3){
+      &:nth-child(3) {
         rotate: 180deg;
         left: calc(100% + 40px);
         translate: 0 calc(-10px - 100%);
       }
     }
 
-    @include u.breakpoint-down(large){
-      &:nth-child(3){
+    @include u.breakpoint-down(large) {
+      &:nth-child(3) {
         display: none;
       }
+    }
+
+    path {
+      fill: var(--testimonial-icon);
     }
   }
 
