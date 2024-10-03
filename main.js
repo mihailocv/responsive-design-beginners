@@ -1,5 +1,12 @@
-const main = document.querySelector('#main');
-const footer = document.querySelector('#footer');
+import "./app/scss/style.scss";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
+
+const main = document.querySelector("#main");
+const footer = document.querySelector("#footer");
 const btnOpen = document.querySelector("#btnOpen");
 const btnClose = document.querySelector("#btnClose");
 const menuTopNav = document.querySelector("#menuTopNav");
@@ -25,12 +32,12 @@ breakpint.addEventListener("change", () => {
 
 function openMobileMenu() {
   btnOpen.setAttribute("aria-expanded", "true");
-  main.setAttribute('inert', '');
-  footer.setAttribute('inert', '');
+  main.setAttribute("inert", "");
+  footer.setAttribute("inert", "");
   menuTopNav.removeAttribute("inert");
   menuTopNav.style.transitionDuration = "400ms";
   overlay.style.transitionDuration = "400ms";
-  bodyScrollLock.disableBodyScroll(menuTopNav);
+  disableBodyScroll(menuTopNav);
   btnClose.focus();
 }
 
@@ -39,7 +46,7 @@ function closeMobileMenu() {
   main.removeAttribute("inert");
   footer.removeAttribute("inert");
   menuTopNav.setAttribute("inert", "");
-  bodyScrollLock.enableBodyScroll(menuTopNav);
+  enableBodyScroll(menuTopNav);
   btnOpen.focus();
 
   setTimeout(() => {
